@@ -46,9 +46,7 @@ export const registerUser = async (req: Request, res: Response) => {
       await prisma.user.create({
         data: newUser,
       });
-      return res.status(200).json({
-        message: 'user added !',
-      });
+      
     } catch (error) {
       console.log(error);
       return res.status(500).json({
@@ -56,3 +54,28 @@ export const registerUser = async (req: Request, res: Response) => {
       });
     }
   };
+
+  export const getAllUsersHandler = async (req: Request, res: Response) => {
+    try {
+      
+      const users =await prisma.user.findMany();
+      return res.status(200).json(users);
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({
+        mrssage: 'server Error !',
+      });
+    }
+  };
+
+  export  const user = async ( req: Request, res: Response) => {
+    return res.status(200).json({
+      message: "Welcome USER ."
+    })
+}
+
+export  const admin = async ( req: Request, res: Response) => {
+    return res.status(200).json({
+      message: "Welcome ADMIN ."
+    })
+}
