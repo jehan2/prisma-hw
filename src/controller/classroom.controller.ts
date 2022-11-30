@@ -20,7 +20,7 @@ export const getAllclassroom = async (req: Request, res: Response) => {
 //   const users = await prisma.student.findMany();
 //   return res.status(200).json(users);
 // };
-export const addNewteacher = async (req: Request, res: Response) => {
+export const addNewclassroom = async (req: Request, res: Response) => {
   try {
     const newclass = req.body as Classroom;
     await prisma.classroom.create({ data: newclass });
