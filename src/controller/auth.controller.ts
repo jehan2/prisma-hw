@@ -2,6 +2,8 @@ import { User } from '@prisma/client'
 import { prisma } from '../config/db';
 import { Request, Response } from 'express';
 import * as argon2 from 'argon2';
+import * as jwt from 'jsonwebtoken'
+
 
 export const loginUser = async (req: Request, res: Response) => {
   try {
