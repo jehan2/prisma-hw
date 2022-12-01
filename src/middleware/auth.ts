@@ -4,7 +4,7 @@ import * as jwt from 'jsonwebtoken'
 interface IUser {
     id: string,
     role: string,
-    int: number
+    iat: number
 }
 
 const protect = (req:Request, res:Response, next:NextFunction) => {
